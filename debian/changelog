@@ -1,5 +1,37 @@
-template-repository (1.0-1) unstable; urgency=medium
+ocaml-sexplib0 (0.15.1-1) unstable; urgency=medium
 
-  * Initial release
+  * Fix d/watch.
+  * New upstream release.
+  * Bump standards-version to 4.6.1.
+  * Ship README.md as docs.
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Julien Puydt <jpuydt@debian.org>  Tue, 11 Oct 2022 17:59:43 +0200
+
+ocaml-sexplib0 (0.14.0-1) unstable; urgency=medium
+
+  * New upstream release
+  * Bump debhelper compat level to 13
+  * Bump Standards-Version to 4.5.0
+
+ -- Stéphane Glondu <glondu@debian.org>  Fri, 24 Jul 2020 09:17:56 +0200
+
+ocaml-sexplib0 (0.13.0-1) unstable; urgency=medium
+
+  * New upstream release
+  * Bump Standards-Version to 4.4.1
+  * Add Rules-Requires-Root: no
+
+ -- Stéphane Glondu <glondu@debian.org>  Thu, 09 Jan 2020 16:10:58 +0100
+
+ocaml-sexplib0 (0.12.0-2) unstable; urgency=medium
+
+  * Override call to "dune build" to call it with -p option (fixes FTBFS
+    with OCaml 4.08.1)
+
+ -- Stéphane Glondu <glondu@debian.org>  Wed, 06 Nov 2019 17:53:37 +0100
+
+ocaml-sexplib0 (0.12.0-1) unstable; urgency=medium
+
+  * Initial release (Closes: #934149)
+
+ -- Stéphane Glondu <glondu@debian.org>  Wed, 07 Aug 2019 19:26:56 +0200

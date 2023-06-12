@@ -1,0 +1,3 @@
+@OCamlStdlibDir@/sexplib0/META
+@OCamlStdlibDir@/sexplib0/*.cma
+OPT: @OCamlStdlibDir@/sexplib0/*.cmxs

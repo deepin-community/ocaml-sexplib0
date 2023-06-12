@@ -1,15 +1,45 @@
-Source: template-repository
-Section: unknown
+Source: ocaml-sexplib0
 Priority: optional
-Maintainer: Tsic404 <liuheng@deepin.org>
-Build-Depends: debhelper (>= 11)
-Standards-Version: 4.1.3
-Homepage: https://github.com/deepin-community/template-repository
-#Vcs-Browser: https://salsa.debian.org/debian/deepin-community-template-repository
-#Vcs-Git: https://salsa.debian.org/debian/deepin-community-template-repository.git
+Maintainer: Debian OCaml Maintainers <debian-ocaml-maint@lists.debian.org>
+Uploaders:
+ Stéphane Glondu <glondu@debian.org>
+Build-Depends:
+ debhelper-compat (= 13),
+ ocaml-nox,
+ ocaml-dune,
+ dh-ocaml
+Standards-Version: 4.6.1
+Rules-Requires-Root: no
+Section: ocaml
+Homepage: https://github.com/janestreet/sexplib0
+Vcs-Git: https://salsa.debian.org/ocaml-team/ocaml-sexplib0.git
+Vcs-Browser: https://salsa.debian.org/ocaml-team/ocaml-sexplib0
 
-Package: template-repository
+Package: libsexplib0-ocaml-dev
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Depends:
+ ${ocaml:Depends},
+ ${shlibs:Depends},
+ ${misc:Depends}
+Provides: ${ocaml:Provides}
+Recommends: ocaml-findlib
+Description: S-expression library (development)
+ Part of Jane Street's Core library. The Core suite of libraries is an
+ industrial strength alternative to OCaml's standard library that was
+ developed by Jane Street, the largest industrial user of OCaml.
+ .
+ This package contains development files.
+
+Package: libsexplib0-ocaml
+Architecture: any
+Depends:
+ ${ocaml:Depends},
+ ${shlibs:Depends},
+ ${misc:Depends}
+Provides: ${ocaml:Provides}
+Description: S-expression library (runtime)
+ Part of Jane Street's Core library. The Core suite of libraries is an
+ industrial strength alternative to OCaml's standard library that was
+ developed by Jane Street, the largest industrial user of OCaml.
+ .
+ This package contains runtime files.

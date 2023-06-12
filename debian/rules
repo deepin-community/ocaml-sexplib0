@@ -1,4 +1,18 @@
 #!/usr/bin/make -f
+# -*- makefile -*-
+
+include /usr/share/ocaml/ocamlvars.mk
+
+DESTDIR=$(CURDIR)/debian/tmp
 
 %:
-	dh $@
+	dh $@ --with ocaml
+
+override_dh_auto_build:
+	dune build -p sexplib0
+
+override_dh_auto_install:
+	dune install --destdir=$(DESTDIR) --prefix=/usr --libdir=..$(OCAML_STDLIB_DIR)
+	rm -f $(DESTDIR)/usr/doc/sexplib0/LICENSE.md
+
+override_dh_dwz:
